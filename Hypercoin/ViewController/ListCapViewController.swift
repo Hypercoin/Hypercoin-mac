@@ -10,6 +10,14 @@ import Cocoa
 
 class ListCapViewController: NSViewController {
 
+	// *********************************************************************
+	// MARK: - Properties
+
+	@IBOutlet fileprivate weak var tableView: NSTableView!
+
+	// *********************************************************************
+	// MARK: - LifeCycle
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -25,5 +33,10 @@ class ListCapViewController: NSViewController {
 		}
 		return viewcontroller
 	}
+}
 
+extension ListCapViewController: NSTableViewDataSource {
+}
+
+extension ListCapViewController: NSTableViewDelegate {
 }
