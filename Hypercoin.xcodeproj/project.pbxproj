@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EBE1000A23BB93B41960A56 /* Pods_HypercoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */; };
 		B51389941F9761EE000906DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389931F9761EE000906DD /* AppDelegate.swift */; };
 		B51389961F9761EE000906DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389951F9761EE000906DD /* ViewController.swift */; };
 		B51389981F9761EE000906DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51389971F9761EE000906DD /* Assets.xcassets */; };
 		B513899B1F9761EE000906DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51389991F9761EE000906DD /* Main.storyboard */; };
 		B51389A71F9761EE000906DD /* HypercoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389A61F9761EE000906DD /* HypercoinTests.swift */; };
+		D205E810659BEA92B6D46BB6 /* Pods_Hypercoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0692AA06182C2C226426BDAE /* Pods-HypercoinTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypercoinTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D937785BBB12F05B892C397 /* Pods-Hypercoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.release.xcconfig"; sourceTree = "<group>"; };
+		65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HypercoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		658520BB3BDE5A7B66744B0E /* Pods-HypercoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypercoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.debug.xcconfig"; sourceTree = "<group>"; };
 		B51389901F9761EE000906DD /* Hypercoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypercoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51389931F9761EE000906DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B51389951F9761EE000906DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +42,7 @@
 		B51389A21F9761EE000906DD /* HypercoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HypercoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51389A61F9761EE000906DD /* HypercoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypercoinTests.swift; sourceTree = "<group>"; };
 		B51389A81F9761EF000906DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hypercoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D205E810659BEA92B6D46BB6 /* Pods_Hypercoin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,18 +58,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBE1000A23BB93B41960A56 /* Pods_HypercoinTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1A8C69E84B41F0EB37C8231 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */,
+				65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B51389871F9761EE000906DD = {
 			isa = PBXGroup;
 			children = (
 				B51389921F9761EE000906DD /* Hypercoin */,
 				B51389A51F9761EE000906DD /* HypercoinTests */,
 				B51389911F9761EE000906DD /* Products */,
+				BF6C4BD0538338B4C322046E /* Pods */,
+				A1A8C69E84B41F0EB37C8231 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +116,17 @@
 			path = HypercoinTests;
 			sourceTree = "<group>";
 		};
+		BF6C4BD0538338B4C322046E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */,
+				5D937785BBB12F05B892C397 /* Pods-Hypercoin.release.xcconfig */,
+				658520BB3BDE5A7B66744B0E /* Pods-HypercoinTests.debug.xcconfig */,
+				0692AA06182C2C226426BDAE /* Pods-HypercoinTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B51389AB1F9761EF000906DD /* Build configuration list for PBXNativeTarget "Hypercoin" */;
 			buildPhases = (
+				D7CF455A0C9F72D815AD72FC /* [CP] Check Pods Manifest.lock */,
 				B513898C1F9761EE000906DD /* Sources */,
 				B513898D1F9761EE000906DD /* Frameworks */,
 				B513898E1F9761EE000906DD /* Resources */,
+				BD025E246C7D76414D50B0F7 /* [CP] Embed Pods Frameworks */,
+				4FF0C918F138634C5E7B484C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -119,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B51389AE1F9761EF000906DD /* Build configuration list for PBXNativeTarget "HypercoinTests" */;
 			buildPhases = (
+				B8477B743ED140F35B4C4BC7 /* [CP] Check Pods Manifest.lock */,
 				B513899E1F9761EE000906DD /* Sources */,
 				B513899F1F9761EE000906DD /* Frameworks */,
 				B51389A01F9761EE000906DD /* Resources */,
+				D5695D6E9E5ECD0476851BF5 /* [CP] Embed Pods Frameworks */,
+				CEB42C51F48A341F670AF678 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,6 +229,117 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4FF0C918F138634C5E7B484C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8477B743ED140F35B4C4BC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HypercoinTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD025E246C7D76414D50B0F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB42C51F48A341F670AF678 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5695D6E9E5ECD0476851BF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7CF455A0C9F72D815AD72FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hypercoin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B513898C1F9761EE000906DD /* Sources */ = {
@@ -340,6 +489,7 @@
 		};
 		B51389AC1F9761EF000906DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hypercoin/Hypercoin.entitlements;
@@ -355,6 +505,7 @@
 		};
 		B51389AD1F9761EF000906DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D937785BBB12F05B892C397 /* Pods-Hypercoin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hypercoin/Hypercoin.entitlements;
@@ -370,8 +521,8 @@
 		};
 		B51389AF1F9761EF000906DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 658520BB3BDE5A7B66744B0E /* Pods-HypercoinTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -386,8 +537,8 @@
 		};
 		B51389B01F9761EF000906DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0692AA06182C2C226426BDAE /* Pods-HypercoinTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
