@@ -25,7 +25,7 @@ class CoinMarketCap {
             .flatMap { request in
                 return Observable.create { observer in
                     _ = request.validate(statusCode: 200..<300)
-                        .validate(contentType: ["text/json"])
+                        .validate(contentType: ["application/json"])
                         .rx.data().subscribe { data in
                             do {
                                 guard let jsonData = data.element else {
