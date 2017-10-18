@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4EBE1000A23BB93B41960A56 /* Pods_HypercoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */; };
+		83FB14151F976DE7003FB287 /* CoinMarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB14141F976DE7003FB287 /* CoinMarketCap.swift */; };
+		83FB14181F97709F003FB287 /* MarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB14171F97709F003FB287 /* MarketCap.swift */; };
 		B51389941F9761EE000906DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389931F9761EE000906DD /* AppDelegate.swift */; };
 		B51389961F9761EE000906DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389951F9761EE000906DD /* ViewController.swift */; };
 		B51389981F9761EE000906DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51389971F9761EE000906DD /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		5D937785BBB12F05B892C397 /* Pods-Hypercoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.release.xcconfig"; sourceTree = "<group>"; };
 		65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HypercoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658520BB3BDE5A7B66744B0E /* Pods-HypercoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypercoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		83FB14141F976DE7003FB287 /* CoinMarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCap.swift; sourceTree = "<group>"; };
+		83FB14171F97709F003FB287 /* MarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCap.swift; sourceTree = "<group>"; };
 		A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.debug.xcconfig"; sourceTree = "<group>"; };
 		B51389901F9761EE000906DD /* Hypercoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypercoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51389931F9761EE000906DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83FB14131F976D94003FB287 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				83FB14141F976DE7003FB287 /* CoinMarketCap.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		83FB14161F977076003FB287 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83FB14171F97709F003FB287 /* MarketCap.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A1A8C69E84B41F0EB37C8231 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +117,8 @@
 		B51389921F9761EE000906DD /* Hypercoin */ = {
 			isa = PBXGroup;
 			children = (
+				83FB14161F977076003FB287 /* Models */,
+				83FB14131F976D94003FB287 /* Services */,
 				B51389931F9761EE000906DD /* AppDelegate.swift */,
 				B51389951F9761EE000906DD /* ViewController.swift */,
 				B51389971F9761EE000906DD /* Assets.xcassets */,
@@ -271,11 +293,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Marshal/Marshal.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Marshal.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -347,6 +375,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B51389961F9761EE000906DD /* ViewController.swift in Sources */,
+				83FB14151F976DE7003FB287 /* CoinMarketCap.swift in Sources */,
+				83FB14181F97709F003FB287 /* MarketCap.swift in Sources */,
 				B51389941F9761EE000906DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
