@@ -20,6 +20,12 @@ class ListCapViewController: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.dataSource = self
+	}
+
+	override func viewWillAppear() {
+		super.viewWillAppear()
+		// TODO: refresh data
 	}
 
 	// *********************************************************************
@@ -35,8 +41,18 @@ class ListCapViewController: NSViewController {
 	}
 }
 
+// *********************************************************************
+// MARK: - NSTableViewDataSource
+
 extension ListCapViewController: NSTableViewDataSource {
+
+	func numberOfRows(in tableView: NSTableView) -> Int {
+		return 5
+	}
+
+	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+		return 40
+	}
 }
 
-extension ListCapViewController: NSTableViewDelegate {
-}
+extension ListCapViewController: NSTableViewDelegate {}
