@@ -16,8 +16,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		if let button = statusItem.button {
 			button.image = NSImage(named: NSImage.Name("LogoBar"))
-			button.action = #selector(printQuote(_:))
 		}
+		constructMenu()
+	}
+
+	func constructMenu() {
+		let menu = NSMenu()
+
+		menu.addItem(NSMenuItem(title: "Print Quote", action: #selector(AppDelegate.printQuote(_:)), keyEquivalent: "P"))
+		menu.addItem(NSMenuItem.separator())
+		menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
+		statusItem.menu = menu
 	}
 
 	@objc func printQuote(_ sender: Any?) {

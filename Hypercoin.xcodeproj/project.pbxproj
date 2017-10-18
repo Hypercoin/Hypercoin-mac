@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		4EBE1000A23BB93B41960A56 /* Pods_HypercoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */; };
 		B51389941F9761EE000906DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389931F9761EE000906DD /* AppDelegate.swift */; };
-		B51389961F9761EE000906DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389951F9761EE000906DD /* ViewController.swift */; };
 		B51389981F9761EE000906DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B51389971F9761EE000906DD /* Assets.xcassets */; };
 		B513899B1F9761EE000906DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B51389991F9761EE000906DD /* Main.storyboard */; };
 		B51389A71F9761EE000906DD /* HypercoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389A61F9761EE000906DD /* HypercoinTests.swift */; };
+		B51389B41F976E60000906DD /* ListCapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389B31F976E60000906DD /* ListCapViewController.swift */; };
 		D205E810659BEA92B6D46BB6 /* Pods_Hypercoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,6 @@
 		A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.debug.xcconfig"; sourceTree = "<group>"; };
 		B51389901F9761EE000906DD /* Hypercoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hypercoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51389931F9761EE000906DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B51389951F9761EE000906DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B51389971F9761EE000906DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B513899A1F9761EE000906DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B513899C1F9761EE000906DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		B51389A21F9761EE000906DD /* HypercoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HypercoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B51389A61F9761EE000906DD /* HypercoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypercoinTests.swift; sourceTree = "<group>"; };
 		B51389A81F9761EF000906DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B51389B31F976E60000906DD /* ListCapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCapViewController.swift; sourceTree = "<group>"; };
 		C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hypercoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,11 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				B51389931F9761EE000906DD /* AppDelegate.swift */,
-				B51389951F9761EE000906DD /* ViewController.swift */,
-				B51389971F9761EE000906DD /* Assets.xcassets */,
-				B51389991F9761EE000906DD /* Main.storyboard */,
-				B513899C1F9761EE000906DD /* Info.plist */,
-				B513899D1F9761EE000906DD /* Hypercoin.entitlements */,
+				B51389B21F976D57000906DD /* Resources */,
+				B51389B11F976D1C000906DD /* ViewController */,
 			);
 			path = Hypercoin;
 			sourceTree = "<group>";
@@ -114,6 +111,25 @@
 				B51389A81F9761EF000906DD /* Info.plist */,
 			);
 			path = HypercoinTests;
+			sourceTree = "<group>";
+		};
+		B51389B11F976D1C000906DD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B51389B31F976E60000906DD /* ListCapViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B51389B21F976D57000906DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B51389971F9761EE000906DD /* Assets.xcassets */,
+				B51389991F9761EE000906DD /* Main.storyboard */,
+				B513899C1F9761EE000906DD /* Info.plist */,
+				B513899D1F9761EE000906DD /* Hypercoin.entitlements */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		BF6C4BD0538338B4C322046E /* Pods */ = {
@@ -346,8 +362,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B51389961F9761EE000906DD /* ViewController.swift in Sources */,
 				B51389941F9761EE000906DD /* AppDelegate.swift in Sources */,
+				B51389B41F976E60000906DD /* ListCapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
