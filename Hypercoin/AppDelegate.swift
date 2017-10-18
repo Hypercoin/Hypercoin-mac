@@ -11,29 +11,46 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+	// *********************************************************************
+	// MARK: - Properties
+
 	let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+	let popover = NSPopover()
+
+	// *********************************************************************
+	// MARK: - LifeCycle
 
 	func applicationDidFinishLaunching(_ notification: Notification) {
+
 		if let button = statusItem.button {
 			button.image = NSImage(named: NSImage.Name("LogoBar"))
+			button.action = #selector(togglePopover(_:))
 		}
-		constructMenu()
+
+		popover.contentViewController = ListCapViewController.freshController()
 	}
 
-	func constructMenu() {
-		let menu = NSMenu()
+	// *********************************************************************
+	// MARK: - Public Methods
 
-		menu.addItem(NSMenuItem(title: "Print Quote", action: #selector(AppDelegate.printQuote(_:)), keyEquivalent: "P"))
-		menu.addItem(NSMenuItem.separator())
-		menu.addItem(NSMenuItem(title: "Quit Quotes", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-
-		statusItem.menu = menu
+	@objc func togglePopover(_ sender: Any?) {
+		if popover.isShown {
+			closePopover(sender: sender)
+		} else {
+			showPopover(sender: sender)
+		}
 	}
 
-	@objc func printQuote(_ sender: Any?) {
-		let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
-		let quoteAuthor = "Mark Twain"
+	// *********************************************************************
+	// MARK: - Private Methods
 
-		print("\(quoteText) — \(quoteAuthor)")
+	private func showPopover(sender: Any?) {
+		if let button = statusItem.button {
+			popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+		}
+	}
+
+	private func closePopover(sender: Any?) {
+		popover.performClose(sender)
 	}
 }

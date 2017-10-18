@@ -511,7 +511,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hypercoin/Hypercoin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Hypercoin/Info.plist;
+				INFOPLIST_FILE = Hypercoin/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercoin.Hypercoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,7 +527,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hypercoin/Hypercoin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Hypercoin/Info.plist;
+				INFOPLIST_FILE = Hypercoin/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hypercoin.Hypercoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
