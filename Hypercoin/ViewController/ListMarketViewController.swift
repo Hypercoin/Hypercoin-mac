@@ -1,5 +1,5 @@
 //
-//  ListCapViewController.swift
+//  ListMarketViewController.swift
 //  Hypercoin
 //
 //  Created by Benjamin Prieur on 18/10/2017.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ListCapViewController: NSViewController {
+class ListMarketViewController: NSViewController {
 
 	// *********************************************************************
 	// MARK: - Properties
@@ -31,10 +31,10 @@ class ListCapViewController: NSViewController {
 	// *********************************************************************
 	// MARK: - Storyboard instantiation
 
-	static func freshController() -> ListCapViewController {
+	static func freshController() -> ListMarketViewController {
 		let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
 		let identifier = NSStoryboard.SceneIdentifier(rawValue: "ListCapViewController")
-		guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ListCapViewController else {
+		guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ListMarketViewController else {
 			fatalError("Why cant i find ListCapViewController? - Check Main.storyboard")
 		}
 		return viewcontroller
@@ -44,7 +44,7 @@ class ListCapViewController: NSViewController {
 // *********************************************************************
 // MARK: - NSTableViewDataSource
 
-extension ListCapViewController: NSTableViewDataSource {
+extension ListMarketViewController: NSTableViewDataSource {
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return 5
@@ -55,4 +55,4 @@ extension ListCapViewController: NSTableViewDataSource {
 	}
 }
 
-extension ListCapViewController: NSTableViewDelegate {}
+extension ListMarketViewController: NSTableViewDelegate {}

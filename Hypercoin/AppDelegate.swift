@@ -24,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		setupStatusItem()
 		setupEventMonitor()
-		popover.contentViewController = ListCapViewController.freshController()
+		popover.contentViewController = ListMarketViewController.freshController()
 	}
 
 	// *********************************************************************
