@@ -1,0 +1,3 @@
+Hypercoin for macOS
+===================
+
