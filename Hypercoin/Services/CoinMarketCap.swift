@@ -13,39 +13,42 @@ import RxAlamofire
 import Marshal
 
 class CoinMarketCap {
-    fileprivate var url = "https://api.coinmarketcap.com/v1/ticker/"
+	fileprivate var url = "https://api.coinmarketcap.com/v1/ticker/"
 
-    init() {
+	init() {
 
-    }
+	}
 
-    public func getMarketCap() -> Observable<MarketCap> {
-        return RxAlamofire.request(.get, self.url)
-            .debug()
-            .flatMap { request in
-                return Observable.create { observer in
-                    _ = request.validate(statusCode: 200..<300)
-                        .validate(contentType: ["application/json"])
-                        .rx.data().subscribe { data in
-                            do {
-                                guard let jsonData = data.element else {
-                                    // @TODO: Create custom error
-                                    observer.on(.completed)
+	public func getMarketCap() -> Observable<[MarketCap]> {
+		return RxAlamofire.request(.get, self.url)
+			.debug()
+			.flatMap { request in
+				return Observable.create { observer in
+					_ = request.validate(statusCode: 200..<300)
+						.validate(contentType: ["application/json"])
+						.rx.data().subscribe { data in
+							do {
+								guard let jsonData = data.element else {
+									// @TODO: Create custom error
+									observer.on(.completed)
+									return
+								}
 
-                                    return
-                                }
+								let json = try JSONParser.JSONArrayWithData(jsonData)
 
-                                let json = try JSONParser.JSONObjectWithData(jsonData)
+								let coins = json.flatMap { item in
+									return try? MarketCap(object: item)
+								}
 
-                                observer.on(.next(try MarketCap(object: json)))
-                                observer.on(.completed)
-                            } catch let error {
-                                observer.on(.error(error))
-                            }
-                        }
+								observer.on(.next(coins))
+								observer.on(.completed)
+							} catch let error {
+								observer.on(.error(error))
+							}
+					}
 
-                    return Disposables.create()
-                }
-            }
-    }
+					return Disposables.create()
+				}
+		}
+	}
 }

@@ -56,6 +56,10 @@ class ListMarketViewController: NSViewController {
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		// TODO: refresh data
+		let service = CoinMarketCap()
+		_ = service.getMarketCap().subscribe { event in
+			print(event)
+		}
 	}
 
 	// *********************************************************************
