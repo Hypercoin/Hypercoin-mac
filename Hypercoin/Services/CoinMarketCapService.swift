@@ -12,14 +12,10 @@ import RxSwift
 import RxAlamofire
 import Marshal
 
-class CoinMarketCap {
+class CoinMarketCapService {
     fileprivate var url = "https://api.coinmarketcap.com/v1/ticker/"
 
-    init() {
-
-    }
-
-    public func getMarketCap() -> Observable<MarketCap> {
+    public func getMarketCap() -> Observable<[MarketCap]> {
         return RxAlamofire.request(.get, self.url)
             .debug()
             .flatMap { request in
@@ -35,9 +31,13 @@ class CoinMarketCap {
                                     return
                                 }
 
-                                let json = try JSONParser.JSONObjectWithData(jsonData)
+                                let json = try JSONParser.JSONArrayWithData(jsonData)
 
-                                observer.on(.next(try MarketCap(object: json)))
+                                let listCap = json.flatMap { item in
+                                    return try? MarketCap(object: item)
+                                }
+
+                                observer.on(.next(listCap))
                                 observer.on(.completed)
                             } catch let error {
                                 observer.on(.error(error))
