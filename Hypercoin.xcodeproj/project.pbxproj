@@ -16,6 +16,7 @@
 		B51389A71F9761EE000906DD /* HypercoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389A61F9761EE000906DD /* HypercoinTests.swift */; };
 		B51389B41F976E60000906DD /* ListMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389B31F976E60000906DD /* ListMarketViewController.swift */; };
 		B51389B71F9774E6000906DD /* EventMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389B61F9774E6000906DD /* EventMonitorManager.swift */; };
+		B51389C91F98B8A6000906DD /* CryptoPercentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */; };
 		D205E810659BEA92B6D46BB6 /* Pods_Hypercoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		B51389A81F9761EF000906DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B51389B31F976E60000906DD /* ListMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMarketViewController.swift; sourceTree = "<group>"; };
 		B51389B61F9774E6000906DD /* EventMonitorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitorManager.swift; sourceTree = "<group>"; };
+		B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPercentCell.swift; sourceTree = "<group>"; };
 		C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hypercoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,12 +121,13 @@
 		B51389921F9761EE000906DD /* Hypercoin */ = {
 			isa = PBXGroup;
 			children = (
-				83FB14161F977076003FB287 /* Models */,
-				83FB14131F976D94003FB287 /* Services */,
 				B51389931F9761EE000906DD /* AppDelegate.swift */,
 				B51389B51F977482000906DD /* Managers */,
+				83FB14161F977076003FB287 /* Models */,
 				B51389B21F976D57000906DD /* Resources */,
+				83FB14131F976D94003FB287 /* Services */,
 				B51389B11F976D1C000906DD /* ViewController */,
+				B51389C51F98B511000906DD /* Views */,
 			);
 			path = Hypercoin;
 			sourceTree = "<group>";
@@ -163,6 +166,14 @@
 				B51389B61F9774E6000906DD /* EventMonitorManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		B51389C51F98B511000906DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BF6C4BD0538338B4C322046E /* Pods */ = {
@@ -403,6 +414,7 @@
 			files = (
 				83FB14151F976DE7003FB287 /* CoinMarketCap.swift in Sources */,
 				83FB14181F97709F003FB287 /* MarketCap.swift in Sources */,
+				B51389C91F98B8A6000906DD /* CryptoPercentCell.swift in Sources */,
 				B51389B71F9774E6000906DD /* EventMonitorManager.swift in Sources */,
 				B51389941F9761EE000906DD /* AppDelegate.swift in Sources */,
 				B51389B41F976E60000906DD /* ListMarketViewController.swift in Sources */,

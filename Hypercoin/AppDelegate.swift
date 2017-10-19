@@ -25,6 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		setupStatusItem()
 		setupEventMonitor()
 		popover.contentViewController = ListMarketViewController.freshController()
+		popover.contentSize = CGSize(width: 300, height: 300)
 	}
 
 	// *********************************************************************

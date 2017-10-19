@@ -12,13 +12,17 @@ class ListMarketViewController: NSViewController {
 
 	enum CellType {
 		case title
+		case value
+		case percent
 
 		var columnIndex: Int {
 			switch self {
 			case .title:
 				return 0
-			default:
-				return Int.max
+			case .value:
+				return 1
+			case .percent:
+				return 2
 			}
 		}
 
@@ -26,8 +30,10 @@ class ListMarketViewController: NSViewController {
 			switch self {
 			case .title:
 				return "CryptoTitleCell"
-			default:
-				return ""
+			case .value:
+				return "CryptoValueCell"
+			case .percent:
+				return "CryptoPercentCell"
 			}
 		}
 	}
@@ -87,14 +93,27 @@ extension ListMarketViewController: NSTableViewDelegate {
 		}
 
 		switch tableColumn {
+
 		case tableView.tableColumns[CellType.title.columnIndex]:
 			cellIdentifier = CellType.title.cellIdentifier
+			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView
+			cell?.textField?.stringValue = "Demo"
+			return cell
+
+		case tableView.tableColumns[CellType.value.columnIndex]:
+			cellIdentifier = CellType.value.cellIdentifier
+			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView
+			cell?.textField?.stringValue = "Coucou"
+			return cell
+
+		case tableView.tableColumns[CellType.percent.columnIndex]:
+			cellIdentifier = CellType.percent.cellIdentifier
+			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? CryptoPercentCell
+			cell?.textField?.stringValue = "0.00%"
+			return cell
+
 		default:
 			break
-		}
-
-		if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
-			return cell
 		}
 
 		return nil
