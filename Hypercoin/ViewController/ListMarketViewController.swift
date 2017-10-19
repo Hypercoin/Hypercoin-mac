@@ -10,6 +10,28 @@ import Cocoa
 
 class ListMarketViewController: NSViewController {
 
+	enum CellType {
+		case title
+
+		var columnIndex: Int {
+			switch self {
+			case .title:
+				return 0
+			default:
+				return Int.max
+			}
+		}
+
+		var cellIdentifier: String {
+			switch self {
+			case .title:
+				return "CryptoTitleCell"
+			default:
+				return ""
+			}
+		}
+	}
+
 	// *********************************************************************
 	// MARK: - Properties
 
@@ -21,6 +43,8 @@ class ListMarketViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.dataSource = self
+		tableView.delegate = self
+		tableView.backgroundColor = .clear
 	}
 
 	override func viewWillAppear() {
@@ -49,10 +73,34 @@ extension ListMarketViewController: NSTableViewDataSource {
 	func numberOfRows(in tableView: NSTableView) -> Int {
 		return 5
 	}
+}
+
+extension ListMarketViewController: NSTableViewDelegate {
+
+	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+
+		var cellIdentifier: String = ""
+
+		guard let tableColumn = tableColumn else {
+			print("TableColumn must be available")
+			return nil
+		}
+
+		switch tableColumn {
+		case tableView.tableColumns[CellType.title.columnIndex]:
+			cellIdentifier = CellType.title.cellIdentifier
+		default:
+			break
+		}
+
+		if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView {
+			return cell
+		}
+
+		return nil
+	}
 
 	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 		return 40
 	}
 }
-
-extension ListMarketViewController: NSTableViewDelegate {}
