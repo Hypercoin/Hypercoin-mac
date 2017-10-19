@@ -9,7 +9,7 @@
 import Foundation
 import Marshal
 
-struct MarketCap {
+struct MarketCap: Unmarshaling {
     public var id: String
     public var name: String
     public var symbol: String
