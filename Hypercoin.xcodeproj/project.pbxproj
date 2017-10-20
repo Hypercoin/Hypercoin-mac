@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4EBE1000A23BB93B41960A56 /* Pods_HypercoinTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */; };
+		832AD9AB1F9A1A180012E596 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832AD9AA1F9A1A180012E596 /* Currency.swift */; };
 		83FB14151F976DE7003FB287 /* CoinMarketCapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB14141F976DE7003FB287 /* CoinMarketCapService.swift */; };
 		83FB14181F97709F003FB287 /* MarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FB14171F97709F003FB287 /* MarketCap.swift */; };
 		B51389941F9761EE000906DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389931F9761EE000906DD /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		5D937785BBB12F05B892C397 /* Pods-Hypercoin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.release.xcconfig"; sourceTree = "<group>"; };
 		65163BDE06928E505CA085CC /* Pods_HypercoinTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HypercoinTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658520BB3BDE5A7B66744B0E /* Pods-HypercoinTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypercoinTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HypercoinTests/Pods-HypercoinTests.debug.xcconfig"; sourceTree = "<group>"; };
+		832AD9AA1F9A1A180012E596 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		83FB14141F976DE7003FB287 /* CoinMarketCapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketCapService.swift; sourceTree = "<group>"; };
 		83FB14171F97709F003FB287 /* MarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCap.swift; sourceTree = "<group>"; };
 		A31C49843E35E50F4161D4C4 /* Pods-Hypercoin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hypercoin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hypercoin/Pods-Hypercoin.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		832AD9A91F9A19D80012E596 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				832AD9AA1F9A1A180012E596 /* Currency.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		83FB14131F976D94003FB287 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +135,7 @@
 		B51389921F9761EE000906DD /* Hypercoin */ = {
 			isa = PBXGroup;
 			children = (
+				832AD9A91F9A19D80012E596 /* Enums */,
 				B51389931F9761EE000906DD /* AppDelegate.swift */,
 				B51389B51F977482000906DD /* Managers */,
 				83FB14161F977076003FB287 /* Models */,
@@ -433,6 +444,7 @@
 				B51389CE1F99E8CA000906DD /* JsonHelper.swift in Sources */,
 				B51389B71F9774E6000906DD /* EventMonitorManager.swift in Sources */,
 				B51389941F9761EE000906DD /* AppDelegate.swift in Sources */,
+				832AD9AB1F9A1A180012E596 /* Currency.swift in Sources */,
 				B51389B41F976E60000906DD /* ListMarketViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
