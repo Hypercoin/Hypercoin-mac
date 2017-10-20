@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Marshal
 
 class ListMarketViewController: NSViewController {
 
@@ -43,6 +44,8 @@ class ListMarketViewController: NSViewController {
 
 	@IBOutlet fileprivate weak var tableView: NSTableView!
 
+	var market: [MarketCap] = []
+
 	// *********************************************************************
 	// MARK: - LifeCycle
 
@@ -57,8 +60,15 @@ class ListMarketViewController: NSViewController {
 		super.viewWillAppear()
 		// TODO: refresh data
 		let service = CoinMarketCapService()
-		_ = service.getMarketCap().subscribe { event in
-			print(event)
+//		_ = service.getMarketCap().subscribe { event in
+		_ = service.getStubMarketCap().subscribe { event in
+			if let items = event.element {
+				print("Reload data")
+				self.market = items
+				self.tableView.reloadData()
+			} else if !event.isCompleted {
+				print("somethings wrong happen with the service")
+			}
 		}
 	}
 
@@ -81,7 +91,7 @@ class ListMarketViewController: NSViewController {
 extension ListMarketViewController: NSTableViewDataSource {
 
 	func numberOfRows(in tableView: NSTableView) -> Int {
-		return 5
+		return market.count
 	}
 }
 
@@ -101,19 +111,23 @@ extension ListMarketViewController: NSTableViewDelegate {
 		case tableView.tableColumns[CellType.title.columnIndex]:
 			cellIdentifier = CellType.title.cellIdentifier
 			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView
-			cell?.textField?.stringValue = "Demo"
+			cell?.textField?.stringValue = market[row].name
 			return cell
 
 		case tableView.tableColumns[CellType.value.columnIndex]:
 			cellIdentifier = CellType.value.cellIdentifier
 			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView
-			cell?.textField?.stringValue = "Coucou"
+			cell?.textField?.stringValue = "\(market[row].price["usd"]!)"
 			return cell
 
 		case tableView.tableColumns[CellType.percent.columnIndex]:
 			cellIdentifier = CellType.percent.cellIdentifier
 			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? CryptoPercentCell
-			cell?.textField?.stringValue = "0.00%"
+			if let percentChange = market[row].percentChange["24h"] {
+				cell?.bgPercent.layer?.backgroundColor = percentChange < 0 ? NSColor.red.cgColor : NSColor.green.cgColor
+				cell?.bgPercent.updateLayer()
+				cell?.textField?.stringValue = "\(percentChange)%"
+			}
 			return cell
 
 		default:

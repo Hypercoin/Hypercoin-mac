@@ -14,12 +14,28 @@ extension MarshaledObject {
 		let value = try? any(for: key)
 		switch value {
 		case .some(let tmp as String):
-			if let result =  tmp as? T {
+			if let result = tmp as? T {
 				return result
 			} else {
 				return defaultValue
 			}
 		case .some(let tmp as T):
+			return tmp
+		default:
+			return defaultValue
+		}
+	}
+
+	func double(for key: String, defaultValue: Double) throws -> Double {
+		let value = try? any(for: key)
+		switch value {
+		case .some(let tmp as String):
+			if let result = Double(tmp) {
+				return result
+			} else {
+				return defaultValue
+			}
+		case .some(let tmp as Double):
 			return tmp
 		default:
 			return defaultValue
@@ -48,15 +64,15 @@ struct MarketCap: Unmarshaling {
 		self.name = try object.value(for: "name")
 		self.symbol = try object.value(for: "symbol")
 		self.rank = try object.value(for: "rank", defaultValue: 0)
-		self.price["usd"] = try object.value(for: "price_usd", defaultValue: 0)
-		self.price["btc"] = try object.value(for: "price_btc", defaultValue: 0)
-		self.volumeUsd24h = try object.value(for: "24h_volume_usd", defaultValue: 0)
-		self.marketCapUsd = try object.value(for: "market_cap_usd", defaultValue: 0)
-		self.availableSupply = try object.value(for: "available_supply", defaultValue: 0)
-		self.totalSupply = try object.value(for: "total_supply", defaultValue: 0)
-		self.percentChange["1h"] = try object.value(for: "percent_change_1h", defaultValue: 0)
-		self.percentChange["24h"] = try object.value(for: "percent_change_24h", defaultValue: 0)
-		self.percentChange["7d"] = try object.value(for: "percent_change_7d", defaultValue: 0)
+		self.price["usd"] = try object.double(for: "price_usd", defaultValue: 0)
+		self.price["btc"] = try object.double(for: "price_btc", defaultValue: 0)
+		self.volumeUsd24h = try object.double(for: "24h_volume_usd", defaultValue: 0)
+		self.marketCapUsd = try object.double(for: "market_cap_usd", defaultValue: 0)
+		self.availableSupply = try object.double(for: "available_supply", defaultValue: 0)
+		self.totalSupply = try object.double(for: "total_supply", defaultValue: 0)
+		self.percentChange["1h"] = try object.double(for: "percent_change_1h", defaultValue: 0)
+		self.percentChange["24h"] = try object.double(for: "percent_change_24h", defaultValue: 0)
+		self.percentChange["7d"] = try object.double(for: "percent_change_7d", defaultValue: 0)
 		self.lastUpdated = try object.value(for: "last_updated", defaultValue: 0)
 	}
 }
