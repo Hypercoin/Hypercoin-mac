@@ -12,12 +12,8 @@ import RxSwift
 import RxAlamofire
 import Marshal
 
-class CoinMarketCap {
+class CoinMarketCapService {
 	fileprivate var url = "https://api.coinmarketcap.com/v1/ticker/"
-
-	init() {
-
-	}
 
 	public func getMarketCap() -> Observable<[MarketCap]> {
 		return RxAlamofire.request(.get, self.url)

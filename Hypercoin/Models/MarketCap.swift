@@ -1,5 +1,5 @@
 //
-//  MarketCap.swift
+//  MarketCapService.swift
 //  Hypercoin
 //
 //  Created by Axel Etcheverry on 18/10/2017.
@@ -27,7 +27,7 @@ extension MarshaledObject {
 	}
 }
 
-struct MarketCap {
+struct MarketCap: Unmarshaling {
 	public var id: String
 	public var name: String
 	public var symbol: String
