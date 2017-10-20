@@ -8,38 +8,38 @@
 
 import Foundation
 
-public enum CurrencyType: String {
-    case aud = "aud"
-    case brl = "brl"
-    case cad = "cad"
-    case chf = "chf"
-    case clp = "clp"
-    case cny = "cny"
-    case czk = "czk"
-    case dkk = "dkk"
-    case eur = "eur"
-    case gbp = "gbp"
-    case hkd = "hkd"
-    case huf = "huf"
-    case idr = "idr"
-    case ils = "ils"
-    case inr = "inr"
-    case jpy = "jpy"
-    case krw = "krw"
-    case mxn = "mxn"
-    case myr = "myr"
-    case nok = "nok"
-    case nzd = "nzd"
-    case php = "php"
-    case pkr = "pkr"
-    case pln = "pln"
-    case rub = "rub"
-    case sek = "sek"
-    case sgd = "sgd"
-    case thb = "thb"
-    case `try` = "try"
-    case twd = "twd"
-    case zar = "zar"
+public enum CurrencyType {
+    case aud
+    case brl
+    case cad
+    case chf
+    case clp
+    case cny
+    case czk
+    case dkk
+    case eur
+    case gbp
+    case hkd
+    case huf
+    case idr
+    case ils
+    case inr
+    case jpy
+    case krw
+    case mxn
+    case myr
+    case nok
+    case nzd
+    case php
+    case pkr
+    case pln
+    case rub
+    case sek
+    case sgd
+    case thb
+    case `try`
+    case twd
+    case zar
 
     static let allValues = [
         aud, brl, cad, chf, clp, cny,
