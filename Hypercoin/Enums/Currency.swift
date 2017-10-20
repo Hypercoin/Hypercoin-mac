@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CurrencyType {
+public enum CurrencyType: String {
     case aud
     case brl
     case cad
