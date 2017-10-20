@@ -18,8 +18,4 @@ class CryptoPercentCell: NSTableCellView {
 	// *********************************************************************
 	// MARK: - LifeCycle
 
-	override func draw(_ dirtyRect: NSRect) {
-		super.draw(dirtyRect)
-	}
-
 }

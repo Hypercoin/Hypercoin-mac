@@ -15,7 +15,29 @@ import Marshal
 class CoinMarketCapService {
 	fileprivate var url = "https://api.coinmarketcap.com/v1/ticker/"
 
-	public func getMarketCap() -> Observable<[MarketCap]> {
+	func getStubMarketCap() -> Observable<[MarketCap]> {
+
+		return Observable.create { observer in
+
+			let jsonData = JsonHelper.readJsonFile(fileName: "sample")
+			guard let json = try? JSONParser.JSONArrayWithData(jsonData) else {
+				observer.onCompleted()
+				return Disposables.create()
+			}
+
+			let coins = json.flatMap { item in
+				return try? MarketCap(object: item)
+			}
+
+			observer.on(.next(coins))
+			observer.onCompleted()
+
+			return Disposables.create()
+		}
+	}
+
+
+	func getMarketCap() -> Observable<[MarketCap]> {
 		return RxAlamofire.request(.get, self.url)
 			.debug()
 			.flatMap { request in

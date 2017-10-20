@@ -690,7 +690,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="66" horizontalPageScroll="10" verticalLineScroll="66" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-na-ZwU">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="66" horizontalPageScroll="10" verticalLineScroll="66" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-na-ZwU">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="P8X-8v-6Yk">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -819,6 +819,7 @@
                                                                 <constraint firstItem="1e0-PB-psl" firstAttribute="centerY" secondItem="STS-20-OiO" secondAttribute="centerY" id="zYM-bL-hHU"/>
                                                             </constraints>
                                                             <connections>
+                                                                <outlet property="bgPercent" destination="qRl-BH-4qh" id="vEh-OV-jJd"/>
                                                                 <outlet property="textField" destination="exb-ao-Odx" id="YSP-qY-hOC"/>
                                                             </connections>
                                                         </tableCellView>
@@ -829,11 +830,11 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="LC8-bY-nJC">
-                                    <rect key="frame" x="0.0" y="284" width="300" height="16"/>
+                                    <rect key="frame" x="-100" y="-100" width="300" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="a65-J1-t6V">
-                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <rect key="frame" x="-100" y="-100" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

@@ -17,6 +17,8 @@
 		B51389B41F976E60000906DD /* ListMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389B31F976E60000906DD /* ListMarketViewController.swift */; };
 		B51389B71F9774E6000906DD /* EventMonitorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389B61F9774E6000906DD /* EventMonitorManager.swift */; };
 		B51389C91F98B8A6000906DD /* CryptoPercentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */; };
+		B51389CB1F99E857000906DD /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = B51389CA1F99E851000906DD /* sample.json */; };
+		B51389CE1F99E8CA000906DD /* JsonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51389CD1F99E8CA000906DD /* JsonHelper.swift */; };
 		D205E810659BEA92B6D46BB6 /* Pods_Hypercoin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		B51389B31F976E60000906DD /* ListMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMarketViewController.swift; sourceTree = "<group>"; };
 		B51389B61F9774E6000906DD /* EventMonitorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitorManager.swift; sourceTree = "<group>"; };
 		B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPercentCell.swift; sourceTree = "<group>"; };
+		B51389CA1F99E851000906DD /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		B51389CD1F99E8CA000906DD /* JsonHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonHelper.swift; sourceTree = "<group>"; };
 		C0AB6A25738803CEE86E513E /* Pods_Hypercoin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hypercoin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 				83FB14161F977076003FB287 /* Models */,
 				B51389B21F976D57000906DD /* Resources */,
 				83FB14131F976D94003FB287 /* Services */,
+				B51389CC1F99E8A3000906DD /* Utils */,
 				B51389B11F976D1C000906DD /* ViewController */,
 				B51389C51F98B511000906DD /* Views */,
 			);
@@ -152,6 +157,7 @@
 		B51389B21F976D57000906DD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B51389CA1F99E851000906DD /* sample.json */,
 				B51389971F9761EE000906DD /* Assets.xcassets */,
 				B51389991F9761EE000906DD /* Main.storyboard */,
 				B513899C1F9761EE000906DD /* Info.plist */,
@@ -174,6 +180,14 @@
 				B51389C81F98B8A6000906DD /* CryptoPercentCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B51389CC1F99E8A3000906DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B51389CD1F99E8CA000906DD /* JsonHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BF6C4BD0538338B4C322046E /* Pods */ = {
@@ -278,6 +292,7 @@
 			files = (
 				B51389981F9761EE000906DD /* Assets.xcassets in Resources */,
 				B513899B1F9761EE000906DD /* Main.storyboard in Resources */,
+				B51389CB1F99E857000906DD /* sample.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +430,7 @@
 				83FB14151F976DE7003FB287 /* CoinMarketCapService.swift in Sources */,
 				83FB14181F97709F003FB287 /* MarketCap.swift in Sources */,
 				B51389C91F98B8A6000906DD /* CryptoPercentCell.swift in Sources */,
+				B51389CE1F99E8CA000906DD /* JsonHelper.swift in Sources */,
 				B51389B71F9774E6000906DD /* EventMonitorManager.swift in Sources */,
 				B51389941F9761EE000906DD /* AppDelegate.swift in Sources */,
 				B51389B41F976E60000906DD /* ListMarketViewController.swift in Sources */,
