@@ -39,6 +39,7 @@ public enum CurrencyType: String {
     case thb
     case `try`
     case twd
+    case usd
     case zar
 
     static let allValues = [
@@ -47,6 +48,6 @@ public enum CurrencyType: String {
         idr, ils, inr, jpy, krw, mxn,
         myr, nok, nzd, php, pkr, pln,
         rub, sek, sgd, thb, `try`, twd,
-        zar
+        usd, zar
     ]
 }
