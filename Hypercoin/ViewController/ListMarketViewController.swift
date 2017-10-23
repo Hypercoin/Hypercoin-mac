@@ -117,13 +117,13 @@ extension ListMarketViewController: NSTableViewDelegate {
 		case tableView.tableColumns[CellType.value.columnIndex]:
 			cellIdentifier = CellType.value.cellIdentifier
 			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? NSTableCellView
-			cell?.textField?.stringValue = "\(market[row].price["usd"]!)"
+			cell?.textField?.stringValue = "\(market[row].price[.usd]!)"
 			return cell
 
 		case tableView.tableColumns[CellType.percent.columnIndex]:
 			cellIdentifier = CellType.percent.cellIdentifier
 			let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: cellIdentifier), owner: nil) as? CryptoPercentCell
-			if let percentChange = market[row].percentChange["24h"] {
+			if let percentChange = market[row].percentChange[.daily] {
 				cell?.bgPercent.layer?.backgroundColor = percentChange < 0 ? NSColor.red.cgColor : NSColor.green.cgColor
 				cell?.bgPercent.updateLayer()
 				cell?.textField?.stringValue = "\(percentChange)%"
