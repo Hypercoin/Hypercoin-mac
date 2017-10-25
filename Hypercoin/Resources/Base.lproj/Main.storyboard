@@ -691,13 +691,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="66" horizontalPageScroll="10" verticalLineScroll="66" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6a-na-ZwU">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                <rect key="frame" x="0.0" y="30" width="300" height="270"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="P8X-8v-6Yk">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView appearanceType="aqua" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="64" rowSizeStyle="automatic" viewBased="YES" id="6pX-XP-JxU">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="270"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -838,12 +838,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ArX-c0-wGc">
+                                <rect key="frame" x="240" y="0.0" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="VbE-Y2-w4j"/>
+                                    <constraint firstAttribute="height" constant="30" id="g1u-Vd-tZe"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" title="Quit" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="iC8-Uc-G0z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="killApp:" target="XfG-lQ-9wD" id="Ycb-hV-hsk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="D6a-na-ZwU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="77b-CI-zRX"/>
                             <constraint firstAttribute="trailing" secondItem="D6a-na-ZwU" secondAttribute="trailing" id="LUB-1s-7jS"/>
+                            <constraint firstAttribute="bottom" secondItem="ArX-c0-wGc" secondAttribute="bottom" id="Ron-MB-TFf"/>
                             <constraint firstItem="D6a-na-ZwU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SL6-T5-y0X"/>
-                            <constraint firstAttribute="bottom" secondItem="D6a-na-ZwU" secondAttribute="bottom" id="rCf-t4-nDV"/>
+                            <constraint firstItem="ArX-c0-wGc" firstAttribute="top" secondItem="D6a-na-ZwU" secondAttribute="bottom" id="h3M-Kc-jZb"/>
+                            <constraint firstAttribute="trailing" secondItem="ArX-c0-wGc" secondAttribute="trailing" id="qit-UO-bkn"/>
                         </constraints>
                     </view>
                     <connections>

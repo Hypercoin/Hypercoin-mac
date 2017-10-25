@@ -60,8 +60,8 @@ class ListMarketViewController: NSViewController {
 		super.viewWillAppear()
 		// TODO: refresh data
 		let service = CoinMarketCapService()
-//		_ = service.getMarketCap().subscribe { event in
-		_ = service.getStubMarketCap().subscribe { event in
+		_ = service.getMarketCap().subscribe { event in
+//		_ = service.getStubMarketCap().subscribe { event in
 			if let items = event.element {
 				print("Reload data")
 				self.market = items
@@ -82,6 +82,13 @@ class ListMarketViewController: NSViewController {
 			fatalError("Why cant i find ListCapViewController? - Check Main.storyboard")
 		}
 		return viewcontroller
+	}
+
+	// *********************************************************************
+	// MARK: - IBActions
+
+	@IBAction func killApp(_ sender: AnyObject) {
+		NSApplication.shared.terminate(self)
 	}
 }
 
