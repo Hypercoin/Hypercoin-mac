@@ -45,6 +45,7 @@ class ListMarketViewController: NSViewController {
 	@IBOutlet fileprivate weak var tableView: NSTableView!
 
 	var market: [MarketCap] = []
+	var refreshTimer: Timer?
 
 	// *********************************************************************
 	// MARK: - LifeCycle
@@ -54,22 +55,8 @@ class ListMarketViewController: NSViewController {
 		tableView.dataSource = self
 		tableView.delegate = self
 		tableView.backgroundColor = .clear
-	}
 
-	override func viewWillAppear() {
-		super.viewWillAppear()
-		// TODO: refresh data
-		let service = CoinMarketCapService()
-		_ = service.getMarketCap().subscribe { event in
-//		_ = service.getStubMarketCap().subscribe { event in
-			if let items = event.element {
-				print("Reload data")
-				self.market = items
-				self.tableView.reloadData()
-			} else if !event.isCompleted {
-				print("somethings wrong happen with the service")
-			}
-		}
+		refreshTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(loadData), userInfo: nil, repeats: true)
 	}
 
 	// *********************************************************************
@@ -146,5 +133,39 @@ extension ListMarketViewController: NSTableViewDelegate {
 
 	func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
 		return 40
+	}
+}
+
+private extension ListMarketViewController {
+
+	@objc func loadData() {
+		// TODO: refresh data
+		let service = CoinMarketCapService()
+		_ = service.getMarketCap().subscribe { event in
+			//		_ = service.getStubMarketCap().subscribe { event in
+			if let items = event.element {
+				print("Reload data")
+				self.market = items
+				self.tableView.reloadData()
+				self.notifyWhenBTCVariationAppear()
+			} else if !event.isCompleted {
+				print("somethings wrong happen with the service")
+			}
+		}
+	}
+
+	func notifyWhenBTCVariationAppear() {
+		guard let btc = market.filter({ $0.name == "Bitcoin" }).first else {
+			print("No bitcoin item in your list... How bitcoin could disappear... Another joke from Flipper the dolphin")
+			return
+		}
+
+		if let dailyPercentChange = btc.percentChange[.daily], abs(dailyPercentChange) > 5 {
+			let notification = NSUserNotification()
+			notification.title = "BTC News"
+			notification.informativeText = "BTC has \(dailyPercentChange)% change"
+			notification.soundName = NSUserNotificationDefaultSoundName
+			NSUserNotificationCenter.default.deliver(notification)
+		}
 	}
 }
