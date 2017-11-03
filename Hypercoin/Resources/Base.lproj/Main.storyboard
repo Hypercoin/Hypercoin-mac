@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -852,17 +852,23 @@
                                     <action selector="killApp:" target="XfG-lQ-9wD" id="Ycb-hV-hsk"/>
                                 </connections>
                             </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="nsB-78-kZ8">
+                                <rect key="frame" x="10" y="7" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="D6a-na-ZwU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="77b-CI-zRX"/>
+                            <constraint firstItem="nsB-78-kZ8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="JVS-ne-kLH"/>
                             <constraint firstAttribute="trailing" secondItem="D6a-na-ZwU" secondAttribute="trailing" id="LUB-1s-7jS"/>
                             <constraint firstAttribute="bottom" secondItem="ArX-c0-wGc" secondAttribute="bottom" id="Ron-MB-TFf"/>
                             <constraint firstItem="D6a-na-ZwU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SL6-T5-y0X"/>
+                            <constraint firstItem="nsB-78-kZ8" firstAttribute="centerY" secondItem="ArX-c0-wGc" secondAttribute="centerY" id="gdx-cI-Maf"/>
                             <constraint firstItem="ArX-c0-wGc" firstAttribute="top" secondItem="D6a-na-ZwU" secondAttribute="bottom" id="h3M-Kc-jZb"/>
                             <constraint firstAttribute="trailing" secondItem="ArX-c0-wGc" secondAttribute="trailing" id="qit-UO-bkn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loader" destination="nsB-78-kZ8" id="Sdw-Pz-3np"/>
                         <outlet property="tableView" destination="6pX-XP-JxU" id="m0e-pc-bYa"/>
                     </connections>
                 </viewController>

@@ -43,7 +43,9 @@ class ListMarketViewController: NSViewController {
 	// MARK: - Properties
 
 	@IBOutlet fileprivate weak var tableView: NSTableView!
+	@IBOutlet fileprivate weak var loader: NSProgressIndicator!
 
+	let service = CoinMarketCapService()
 	var market: [MarketCap] = []
 	var coinNotifaction: [String: NotifiactionStatus] = [:]
 	var refreshTimer: Timer?
@@ -140,10 +142,15 @@ extension ListMarketViewController: NSTableViewDelegate {
 private extension ListMarketViewController {
 
 	@objc func loadData() {
-		// TODO: refresh data
-		let service = CoinMarketCapService()
-		_ = service.getMarketCap().subscribe { event in
-			//		_ = service.getStubMarketCap().subscribe { event in
+		loader.startAnimation(self)
+
+		_ = service.getMarketCap().subscribe { [weak self] event in
+//		_ = service.getStubMarketCap().subscribe { event in
+
+			guard let `self` = self else { return }
+
+			self.loader.stopAnimation(self)
+
 			if let items = event.element {
 				print("Reload data")
 				self.market = items
