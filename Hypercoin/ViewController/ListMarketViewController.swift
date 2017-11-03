@@ -45,6 +45,7 @@ class ListMarketViewController: NSViewController {
 	@IBOutlet fileprivate weak var tableView: NSTableView!
 
 	var market: [MarketCap] = []
+	var coinNotifaction: [String: NotifiactionStatus] = [:]
 	var refreshTimer: Timer?
 
 	// *********************************************************************
@@ -160,12 +161,25 @@ private extension ListMarketViewController {
 			return
 		}
 
-		if let dailyPercentChange = btc.percentChange[.daily], abs(dailyPercentChange) > 5 {
+		guard let dailyPercentChange = btc.percentChange[.daily] else {
+			return
+		}
+
+		let currentStatus = coinNotifaction["Bitcoin"] ?? .none
+		if abs(dailyPercentChange) > 5, currentStatus == .none {
 			let notification = NSUserNotification()
 			notification.title = "BTC News"
 			notification.informativeText = "BTC has \(dailyPercentChange)% change"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.default.deliver(notification)
+			coinNotifaction["Bitcoin"] = dailyPercentChange > 0 ? .up : .down
+		} else if abs(dailyPercentChange) < 5, currentStatus != .none {
+			let notification = NSUserNotification()
+			notification.title = "BTC News"
+			notification.informativeText = "BTC has \(dailyPercentChange)% change"
+			notification.soundName = NSUserNotificationDefaultSoundName
+			NSUserNotificationCenter.default.deliver(notification)
+			coinNotifaction["Bitcoin"] = .none
 		}
 	}
 }
