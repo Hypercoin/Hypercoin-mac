@@ -155,38 +155,39 @@ private extension ListMarketViewController {
 				print("Reload data")
 				self.market = items
 				self.tableView.reloadData()
-				self.notifyWhenBTCVariationAppear()
+				self.notifyWhenCurrencyVariationAppear(currency: "Bitcoin")
+				self.notifyWhenCurrencyVariationAppear(currency: "Litecoin")
 			} else if !event.isCompleted {
 				print("somethings wrong happen with the service")
 			}
 		}
 	}
 
-	func notifyWhenBTCVariationAppear() {
-		guard let btc = market.filter({ $0.name == "Bitcoin" }).first else {
-			print("No bitcoin item in your list... How bitcoin could disappear... Another joke from Flipper the dolphin")
+	func notifyWhenCurrencyVariationAppear(currency: String) {
+		guard let currencyData = market.filter({ $0.name == currency }).first else {
+			print("No \(currency) item in your list... How \(currency) could disappear... Another joke from Flipper the dolphin")
 			return
 		}
 
-		guard let dailyPercentChange = btc.percentChange[.daily] else {
+		guard let dailyPercentChange = currencyData.percentChange[.daily] else {
 			return
 		}
 
-		let currentStatus = coinNotifaction["Bitcoin"] ?? .none
+		let currentStatus = coinNotifaction[currency] ?? .none
 		if abs(dailyPercentChange) > 5, currentStatus == .none {
 			let notification = NSUserNotification()
-			notification.title = "BTC News"
-			notification.informativeText = "BTC has \(dailyPercentChange)% change"
+			notification.title = "\(currency) News"
+			notification.informativeText = "\(currency) has \(dailyPercentChange)% change"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.default.deliver(notification)
-			coinNotifaction["Bitcoin"] = dailyPercentChange > 0 ? .up : .down
+			coinNotifaction[currency] = dailyPercentChange > 0 ? .up : .down
 		} else if abs(dailyPercentChange) < 5, currentStatus != .none {
 			let notification = NSUserNotification()
-			notification.title = "BTC News"
-			notification.informativeText = "BTC has \(dailyPercentChange)% change"
+			notification.title = "\(currency) News"
+			notification.informativeText = "\(currency) has \(dailyPercentChange)% change"
 			notification.soundName = NSUserNotificationDefaultSoundName
 			NSUserNotificationCenter.default.deliver(notification)
-			coinNotifaction["Bitcoin"] = .none
+			coinNotifaction[currency] = .none
 		}
 	}
 }
